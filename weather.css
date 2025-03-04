@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #16171d;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /* Increased spacing between elements */
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    /* For better mobile responsiveness */
+}
+
+/* Input and Buttons Common Style */
+.input-button {
+    width: 250px;
+    /* Increased width */
+    height: 55px;
+    /* Increased height */
+    padding: 12px 20px;
+    font-size: 17px;
+    /* Larger font */
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    /* More rounded corners */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Field */
+#city-input {
+    background-color: #2b2c37;
+    color: white;
+    outline: none;
+    border: 2px solid transparent;
+    /* Hidden border for hover effect */
+}
+
+#city-input:focus {
+    border-color: #4d5bce;
+    /* Highlight color when focused */
+    box-shadow: 0 0 12px rgba(77, 91, 206, 0.3);
+}
+
+#city-input::placeholder {
+    color: #bdbecb;
+}
+
+/* Buttons */
+#Search-button,
+#temp-toggle {
+    background: linear-gradient(145deg, #3a3b4a, #2a2b36);
+    /* Gradient background */
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#Search-button:hover,
+#temp-toggle:hover {
+    background: linear-gradient(145deg, #4d5bce, #3a3b4a);
+    /* Gradient change on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#Search-button:active,
+#temp-toggle:active {
+    transform: translateY(1px);
+    /* Press effect */
+}
+
+/* Main Search Button */
+#Search-button {
+    background: linear-gradient(145deg, #4d5bce, #3a3b4a);
+    /* Different gradient for primary action */
+}
+
+/* Weather Display */
+#weather-display {
+    margin-top: 40px;
+    /* Increased spacing */
+    padding: 35px;
+    background: linear-gradient(145deg, #2b2c37, #222330);
+    border-radius: 16px;
+    display: inline-block;
+    min-width: 350px;
+    /* Increased width */
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Weather Information */
+#city-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+#city-time {
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #bdbecb;
+}
+
+#city-temp {
+    font-size: 42px;
+    /* Much bigger for emphasis */
+    font-weight: bold;
+    color: #f5a623;
+    /* Bright temperature color */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#weather-condition {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+#humidity-wind {
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: #bdbecb;
+}
+
+/* Weather Icon */
+#weather-icon {
+    width: 120px;
+    /* Larger icon */
+    height: 120px;
+    margin: 15px auto;
+    display: none;
+    /* Hidden by default, will be shown when image loads */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+    /* Subtle glow effect */
+}
+
+/* Loading State */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: "Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #bdbecb;
+    font-size: 18px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input-button {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    #weather-display {
+        padding: 25px;
+        min-width: 280px;
+    }
+}
